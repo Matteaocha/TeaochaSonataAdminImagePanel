@@ -1,0 +1,18 @@
+{
+    "name": "Teaocha/SonataAdminImagePanel",
+	"version" : "1.0.0",
+    "license": "MIT",
+    "type": "project",
+    "description": "Symfony2 bundle that adds a page and modal popup to the sonata admin that lets you upload, crop, and browse images",
+    "authors": [
+        {
+            "name": "Matt Bilton"
+        }
+    ],
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/Matteaocha/TeaochaSonataAdminImagePanel"
+		}
+	]
+}
