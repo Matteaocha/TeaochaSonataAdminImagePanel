@@ -1,0 +1,64 @@
+#modal_cropper {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0.95;
+	z-index: 100000;
+}
+
+#modal_cropper_holder {
+	border: 1px solid #333;
+	height: 60%;
+	width: 80%;
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 8%;
+	position: relative;
+}
+
+#modal_cropper_image {
+	max-height: 100%;
+	max-width: 100%;
+	margin: auto;
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#modal_cropper_buttons {
+	height: 30px;
+	width: 80%;
+	max-width: 700px;
+	position: absolute;
+	bottom: -15%;
+	left: 50%;
+	transform: translateX(-50%);	
+}
+
+#modal_cropper_ar_input {
+	padding: 5px;
+    float: right;
+}
+
+#modal_cropper_button_done {
+	float: left;
+	width: 85px;
+}
+
+#modal_cropper_button_done.loading {
+	background-image: url('ajax-loader.gif');
+	background-repeat: no-repeat;
+    background-position: center;
+    background-size: 17px 17px;
+}
+
+.ar-btn {
+	float: right;
+	margin-left: 5px;
+}

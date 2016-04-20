@@ -1,0 +1,30 @@
+<div id="images_panel" data-modal=false>
+	<div id="images_panel_topbar">
+		<span style="font-size: 2em">Image gallery<span>
+		<button id="images_panel_upload_button" class="btn btn-danger">Upload</button>
+		<button id="images_panel_from_url_button" class="btn btn-danger">New from URL</button>
+		<input type="file" id="images_panel_file" style="display:none">
+	</div>
+	<div id="images_panel_images_list">
+		{% for image in images %}
+			<div class="images-panel-image" data-id="{{image.getId()}}">				
+				<img src="{{image.getPreviewUrl()}}" data-croppable=true />
+				<i class="fa fa-search images-panel-preview" aria-hidden="true" title="preview"></i>
+				<i class="fa fa-crop images-panel-crop" aria-hidden="true" title="crop"></i>
+				<i class="fa fa-times images-panel-delete" aria-hidden="true" title="delete"></i>
+				<span></span>
+			</div>
+		{% endfor %}
+	</div>
+	
+	<div id="images_panel_url_form" class="hidden">
+		<div class='form-header'>
+			<h3>Enter an image URL:</h3>
+		</div>
+		<div class="form-body">
+			<input type="text" placeholder="http://imageurl.jpg" id="images_panel_url_form_input">
+			<button class="btn btn-primary" id="images_panel_url_form_ok">OK</button>
+			<button class="btn btn-danger" id="images_panel_url_form_cancel">Cancel</button>
+		</div>
+	</div>
+</div>	

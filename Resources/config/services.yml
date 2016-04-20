@@ -1,0 +1,3 @@
+services:
+    teaocha.image_panel.request_handler_provider:
+        class: Teaocha\SonataAdminImagePanelBundle\Request\RequestHandlerProvider

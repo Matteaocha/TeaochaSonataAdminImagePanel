@@ -1,0 +1,19 @@
+teaocha_image_panel_home:
+    path: /admin/images
+    defaults: {_controller: 'TeaochaSonataAdminImagePanelBundle:ImagePanel:index'}
+
+teaocha_image_panel_modal:
+    path: /admin/images/modal
+    defaults: {_controller: 'TeaochaSonataAdminImagePanelBundle:ImagePanel:openModalImagePanel'}
+
+teaocha_image_panel_upload_image:
+    path: /mediaprocess/uploadimage
+    defaults: {_controller: 'TeaochaSonataAdminImagePanelBundle:MediaProcess:uploadImage'}
+
+teaocha_image_panel_delete_image:
+    path: /mediaprocess/deleteimage/{id}
+    defaults: {_controller: 'TeaochaSonataAdminImagePanelBundle:MediaProcess:deleteImage'}
+
+teaocha_image_panel_image_from_url:
+    path: /mediaprocess/imagefromurl
+    defaults: {_controller: 'TeaochaSonataAdminImagePanelBundle:MediaProcess:imageFromUrl'}
