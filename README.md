@@ -16,7 +16,7 @@ Symfony2 bundle that adds a page and modal popup to the sonata admin that lets y
 First require the bundle:
 
 ```
-composer require teaocha\image-panel
+composer require Teaocha/SonataAdminImagePanel
 ```
 
 Add it to your kernel
