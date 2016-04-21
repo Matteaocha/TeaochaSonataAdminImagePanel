@@ -37,7 +37,7 @@ class AppKernel extends Kernel
 Install the assets:
 
 ```
-php app/console assets:install
+php app/console assets:install web
 ```
 
 Add the routing:

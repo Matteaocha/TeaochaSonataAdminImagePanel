@@ -2,16 +2,16 @@
 
 {% block stylesheets %}
     {{ parent() }}
-	<link type="text/css" rel="stylesheet" href="{{asset('css/cropper/cropper.min.css')}}" />
-	<link type="text/css" rel="stylesheet" href="{{asset('css/sonata-admin-image-panel/modal-image.css')}}" />
-	<link type="text/css" rel="stylesheet" href="{{asset('css/sonata-admin-image-panel/image-panel.css')}}" />
+	<link type="text/css" rel="stylesheet" href="{{asset('bundles/teaochasonataadminimagepanel/css/cropper/cropper.min.css')}}" />
+	<link type="text/css" rel="stylesheet" href="{{asset('bundles/teaochasonataadminimagepanel/css/modal-image.css')}}" />
+	<link type="text/css" rel="stylesheet" href="{{asset('bundles/teaochasonataadminimagepanel/css/image-panel.css')}}" />
 {% endblock %}
 
 {% block javascripts %}    {{ parent() }}
 	
-	<script src="{{asset('js/cropper/cropper.min.js')}}"></script>
-	<script src="{{asset('js/sonata-admin-image-panel/modal-image.js')}}"></script>
-	<script src="{{asset('js/sonata-admin-image-panel/image-panel.js')}}"></script>
+	<script src="{{asset('bundles/teaochasonataadminimagepanel/js/cropper/cropper.min.js')}}"></script>
+	<script src="{{asset('bundles/teaochasonataadminimagepanel/js/modal-image.js')}}"></script>
+	<script src="{{asset('bundles/teaochasonataadminimagepanel/js/image-panel.js')}}"></script>
     <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 {% endblock %}
 
