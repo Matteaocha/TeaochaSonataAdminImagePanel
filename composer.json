@@ -2,7 +2,7 @@
     "name": "teaocha/sonata-admin-image-panel",
 	"type": "symfony-bundle",
 	"keywords": ["sonata","images", "panel", "ckeditor", "crop", "upload"],
-	"version" : "1.0.0",
+	"version" : "1.0.1",
     "license": "MIT",
     "description": "Symfony bundle that adds a page and modal popup to the sonata admin that lets you upload, crop, and browse images",
     "authors": [
@@ -13,6 +13,12 @@
     ],
 	"autoload": {
         "psr-4": { "Teaocha\\SonataAdminImagePanelBundle\\": "" }
+    },
+	"require": {
+        "php": "^5.3.9|^7.0",
+        "symfony/symfony": "~2.8",
+        "sonata-project/core-bundle": "^2.2.6",
+        "sonata-project/admin-bundle": "~2.3,<2.4"
     },
 	"repositories": [
 		{
