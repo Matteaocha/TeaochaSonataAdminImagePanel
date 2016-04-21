@@ -207,7 +207,7 @@ $(document).ready(function(){
 		})
 		
 		$(document).on('click', '#images_panel_close_button', function(){
-			if($('#images_panel').attr('data-ckeditor')){
+			if($('#images_panel').attr('data-ckeditor') === 'true'){
 				window.close()
 			}
 			else {
@@ -216,8 +216,8 @@ $(document).ready(function(){
 		})
 		
 		$(document).on('click', '.images-panel-image img', function(){
-			var isModal = $('#images_panel').attr('data-modal')
-			var isCkeditor = $('#images_panel').attr('data-ckeditor')
+			var isModal = ($('#images_panel').attr('data-modal') === 'true')
+			var isCkeditor = ($('#images_panel').attr('data-ckeditor') === 'true')
 			var isLoading = $(this).parent().hasClass('loading')
 			if(isModal && !isLoading && !isCkeditor){
 				useImage(this)
