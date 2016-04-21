@@ -9,18 +9,20 @@
 
 {% block javascripts %}    {{ parent() }}
 	
-	<script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
 	<script src="{{asset('js/cropper/cropper.min.js')}}"></script>
 	<script src="{{asset('js/sonata-admin-image-panel/modal-image.js')}}"></script>
 	<script src="{{asset('js/sonata-admin-image-panel/image-panel.js')}}"></script>
-    <script src="//cdn.ckeditor.com/4.5.8/standard/ckeditor.js"></script>
+    <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 {% endblock %}
 
 
 {% block side_bar_after_nav %}
+	{% if app.security.token and is_granted('ROLE_SONATA_ADMIN') %}
 	<li id="image-panel-dashboard-nav-item">
 		<a href="{{url('teaocha_image_panel_home')}}">
 			<i class="fa fa-camera"></i><span>Images</span>
 		</a>
 	</li>
+	{{ parent() }}
+	{% endif %}
 {% endblock %}

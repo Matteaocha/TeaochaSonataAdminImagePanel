@@ -6,6 +6,10 @@ teaocha_image_panel_modal:
     path: /admin/images/modal
     defaults: {_controller: 'TeaochaSonataAdminImagePanelBundle:ImagePanel:openModalImagePanel'}
 
+teaocha_image_panel_ckeditor:
+    path: /admin/images/ckeditor
+    defaults: {_controller: 'TeaochaSonataAdminImagePanelBundle:ImagePanel:ckeditorImagePanel'}
+
 teaocha_image_panel_upload_image:
     path: /mediaprocess/uploadimage
     defaults: {_controller: 'TeaochaSonataAdminImagePanelBundle:MediaProcess:uploadImage'}

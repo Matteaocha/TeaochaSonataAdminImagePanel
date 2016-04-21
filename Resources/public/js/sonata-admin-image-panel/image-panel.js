@@ -116,6 +116,20 @@ $(document).ready(function(){
 			$('#modal_images_panel').remove()
 		}
 		
+		function getUrlParam( paramName ) {
+            var reParam = new RegExp( '(?:[\?&]|&)' + paramName + '=([^&]+)', 'i' );
+            var match = window.location.search.match( reParam );
+
+            return ( match && match.length > 1 ) ? match[1] : null;
+        }
+
+        function returnImageToCkeditor(image) {
+			var url = $(image).attr('src')
+            var funcNum = getUrlParam( 'CKEditorFuncNum' )
+            window.opener.CKEDITOR.tools.callFunction( funcNum, url )
+            window.close()
+        }
+		
 		function useImage(image) {		
 			if(urlElementToUpdate) {
 				$(urlElementToUpdate).val($(image).attr('src'))
@@ -192,13 +206,25 @@ $(document).ready(function(){
 			$('#modal_images_panel').load('/admin/images/modal')
 		})
 		
-		$(document).on('click', '#images_panel_close_button', closeModalImagesPanel)
+		$(document).on('click', '#images_panel_close_button', function(){
+			if($('#images_panel').attr('data-ckeditor')){
+				window.close()
+			}
+			else {
+				closeModalImagesPanel()
+			}
+		})
 		
 		$(document).on('click', '.images-panel-image img', function(){
 			var isModal = $('#images_panel').attr('data-modal')
+			var isCkeditor = $('#images_panel').attr('data-ckeditor')
 			var isLoading = $(this).parent().hasClass('loading')
-			if(isModal && !isLoading){
+			if(isModal && !isLoading && !isCkeditor){
 				useImage(this)
+			}
+			
+			if(isModal && !isLoading && isCkeditor) {
+				returnImageToCkeditor(this)
 			}
 		})
 	

@@ -40,5 +40,18 @@ class ImagePanelController extends Controller
 			'images' => $images
         );
     }
+	
+	/**
+     * @Template()
+     */
+    public function ckeditorImagePanelAction()
+    {		
+		$imageHandler = $this->get('teaocha.image_panel.request_handler_provider')->getHandler();
+		$images = $imageHandler->listImages();
+        
+        return array(
+			'images' => $images
+        );
+    }
 
 }
