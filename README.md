@@ -11,12 +11,13 @@ Symfony2 bundle that adds a page and modal popup to the sonata admin that lets y
 - You can upload, browse, delete, and crop images in the panel
 - You can also upload urls for external images
 - You can add a button next to any text box on an edit page that opens the panel in a modal view and returns the selected image's url into the text box
+- The bundle also includes the CKEditor standard edition, configured to use the image panel for images
 
 ###Installing
 First require the bundle:
 
 ```
-composer require Teaocha/SonataAdminImagePanel
+composer require teaocha/sonata-admin-image-panel
 ```
 
 Add it to your kernel
@@ -148,6 +149,18 @@ protected function configureFormFields(FormMapper $formMapper)
   ->end();
 }
 ```
+
+###Using the bundle with CKEditor
+The bundle includes the [CKEditor](http://ckeditor.com/) standard edition in its assets. The editor is configured to use the image panel for browsing images. When you click the image icon on CKEditor's dashboard there will be a button next to the URL input which says 'Browse Server'; clicking that will open the panel.
+
+The bundle's admin dashboard layout includes the necessary script tags to use the editor so all you have to do to get it to appear in an edit form is add the 'ckeditor' class to a form textarea (see example above).
+
+If you are already using CKEditor and don't want to override your current settings you'll have to edit my layout file and remove the line which includes ckeditor. Then, to use the image panel, go into config.js of the editor and add the line:
+
+```
+config.filebrowserBrowseUrl = "/admin/images/ckeditor"
+```
+
 
 ###Credits
 Additional credits go to [Cropper](http://fengyuanchen.github.io/cropperjs/), because that's what i've used for image cropping 
