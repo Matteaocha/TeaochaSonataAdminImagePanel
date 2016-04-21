@@ -116,7 +116,8 @@ which you should process in your own way and return a RequestResult object (see 
 **RequestResult** is a simple object that requires two fields to be set:
 - setPreviewUrl()
 - setId()
-The 'preview url' being a url that will be used to show the image in the panel, and the 'id' being a numeric id that refers to that image
+
+The 'preview url' is the url that will be used to show the image in the panel, and the 'id' should be a numeric id that refers to that image
 
 Once you've done that, add the service and tag it with **teaocha.image_panel.request_handler**:
 
