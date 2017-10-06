@@ -1,9 +1,11 @@
 # TeaochaSonataAdminImagePanel
+
 Symfony2 bundle that adds a page and modal popup to the sonata admin that lets you upload, crop, and browse images
 
 ![alt tag](https://s3.amazonaws.com/matteaocha-images/TeaochaImagePanel1.jpg)
 
-###How it works
+### How it works
+
 - Install the bundle
 - Add the bundle routing and redirect sonata to use the bundle's template
 - Create a service that handles the image data uploaded and returns a url to a preview image
@@ -13,7 +15,8 @@ Symfony2 bundle that adds a page and modal popup to the sonata admin that lets y
 - You can add a button next to any text box on an edit page that opens the panel in a modal view and returns the selected image's url into the text box
 - The bundle also includes the CKEditor standard edition, configured to use the image panel for images
 
-###Installing
+### Installing
+
 First require the bundle:
 
 ```
@@ -55,7 +58,8 @@ sonata_admin:
     layout:  "@TeaochaSonataAdminImagePanelBundle/Resources/views/admin_layout.html.twig"
 ```
 
-###Creating the request handler
+### Creating the request handler
+
 Given that there are all sorts of ways you may want to store your or process your images I thought it best to leave the image handling
 up to you, so in order for the bundle to work you have to create a service that handles the requests.
 
@@ -128,7 +132,8 @@ app.image_panel_request_handler:
     - { name: teaocha.image_panel.request_handler }
 ```
 
-###Adding a button to a text field
+### Adding a button to a text field
+
 You can add a button to any text input in the admin that looks like so:
 
 ![alt tag](https://s3.amazonaws.com/matteaocha-images/TeaochaImagePanel2.JPG)
@@ -151,7 +156,8 @@ protected function configureFormFields(FormMapper $formMapper)
 }
 ```
 
-###Using the bundle with CKEditor
+### Using the bundle with CKEditor
+
 The bundle includes the [CKEditor](http://ckeditor.com/) standard edition in its assets. The editor is configured to use the image panel for browsing images. When you click the image icon on CKEditor's dashboard there will be a button next to the URL input which says 'Browse Server'; clicking that will open the panel.
 
 The bundle's admin dashboard layout includes the necessary script tags to use the editor so all you have to do to get it to appear in an edit form is add the 'ckeditor' class to a form textarea (see example above).
@@ -163,8 +169,10 @@ config.filebrowserBrowseUrl = "/admin/images/ckeditor"
 ```
 
 
-###Credits
+### Credits
+
 Additional credits go to [Cropper](http://fengyuanchen.github.io/cropperjs/), because that's what i've used for image cropping 
 
-###Notes
+### Notes
+
 Right now the panel only uploads data strings in the jpeg format
